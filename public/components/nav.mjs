@@ -6,9 +6,9 @@ export default class extends componentClass {
     super()
     this.componentPath = '/nav.html'
   }
-  
+
   mounted() {
-    const navBar = this.shadowRoot.querySelector('#nav-bar')
+    const navBar = this.root.querySelector('#nav-bar')
 
     navBar.addEventListener('click', e => {
       if(e.target.className.includes('nav-button')) {

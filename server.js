@@ -6,19 +6,25 @@ const fs = require('fs')
 
 const path = require('path')
 
+// Static Path for most of the files
 app.use(express.static('public'))
+// Static Path for spa components
 app.use('/static', express.static(path.join(__dirname, 'public', 'components')))
-app.use('/lib/jquery', express.static(path.join(__dirname, 'node_modules/jquery/dist')))
+
 
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'))
 })
 
+
+// Handles SPA
 io.on('connection', (socket) => {
+
+  // Listents to the request from component on client side
   socket.on('req component', (componentPath) => {
     const basePath = path.join(__dirname, 'public', 'components')
 
-    console.log(path.join(basePath, componentPath))
+    //Reads Component File
     fs.readFile(path.join(basePath, componentPath), (err, file) => {
       let component
       if(err) {
@@ -28,6 +34,7 @@ io.on('connection', (socket) => {
         component = file.toString()
       }
 
+      // Sends component file to the client
       socket.emit('res component', component)
     })
   })
