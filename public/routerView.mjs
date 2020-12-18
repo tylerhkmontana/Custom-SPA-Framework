@@ -3,11 +3,14 @@ import defaultComponent from './defaultComponent.mjs'
 export default class extends defaultComponent {
   constructor() {
     super()
-    this.componentPath = '/home.html'
   }
 
   static get observedAttributes() {
     return ['component']
+  }
+
+  connectedCallback() {
+    
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
