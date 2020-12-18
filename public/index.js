@@ -5,7 +5,7 @@ import routerView from './routerView.mjs'
 // Custom Components
 import navClass from './components/nav.mjs'
 
-jQuery(() => {
+document.addEventListener('DOMContentLoaded', () => {
   router()
 })
 
