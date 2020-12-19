@@ -5,11 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script type="module" src="/index.js"></script>
   <title>Document</title>
-
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+</style>
 </head>
 <body>
   <h1>Shit</h1>
-  <component-nav Nav></component-nav>
+
+  <default-component data-component="/nav.html"></default-component>
 
   <div id="router"></div>
   <router-view></router-view>

@@ -1,7 +1,7 @@
 <ul id="nav-bar">
-  <li><a class="nav-button" href="/home">Home</a></li>
-  <li><a class="nav-button" href="/about">About</a></li>
-  <li><a class="nav-button" href="/portfolio">Portfolio</a></li>
+  <navigate-to to="/"><button>home</button></navigate-to>
+  <navigate-to to="/about"><button>about</button></navigate-to>
+  <navigate-to to="portfolio"><button>portfolio</button></navigate-to>
 </ul>
 
 <style>
@@ -30,8 +30,8 @@
 
   ul {
     display: flex;
-    width: 100vw;
-    padding: 30px;
+    width: 100%;
     justify-content: space-around;
+    padding: 20px 0;
   }
 </style>
